@@ -1,71 +1,137 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-	<title>Ishtiaque's CV</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ishtiaque's CV</title>   
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- My custom styles -->
+  <style>
+  .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .skillbar {
+	width: 75%;
+	margin: auto;  
+  }
+  </style>
 </head>
 
 <body>
-
-	<div id="intro">
-        <h1>Hi...</h1>
-        <p>I'm Ishtiaque. Computer Science graduate from Kolkata, India. I love coding and making new things. After freelancing as a web developer during my college days, I am currently working for a reputed MNC in India. </p>
-        <p>Scroll down or click on the buttons below to know more.
-        </p>
-        <br>
-        <p>Please note that is site is currently a work in progress. Some data might be incomplete.</p>
+  <div class="container-fluid bg-1 text-center">
+    <h1>Hi!</h1>
+    <img src="images/my_pic.jpg" class="img-circle" alt="my picture">
+    <h2>I am a doer, go-getter and dreamer.</h2>
+  </div>
+  
+  <div class="container-fluid bg-2 text-center">
+    <h2>About me</h2>
+    <p>I'm Ishtiaque. Computer Science graduate from Kolkata, India. Software developer by profession, Geek by heart. I love coding and making new things. After freelancing as a web developer during my college days, I am currently working for a reputed MNC in India. </p>
+    <p>Scroll down to know more.</p>
+  </div>
+  
+  <div class="container-fluid bg-3 text-center">
+    <h2>Things I know</h2>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-1"><span>Beginner</span></div>
+      <div class="col-md-1"><span>Familiar</span></div>
+      <div class="col-md-1"><span>Proficient</span></div>
+      <div class="col-md-1"><span>Expert</span></div>
+      <div class="col-md-1"><span>Master</span></div>
+    </div>
+    <div class="row text-left skillbar">
+      <div class="col-md-3">
+        <p>HTML / HTML5</p>
+      </div>
+      <div class="col-md-9">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:92%">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-left skillbar">
+      <div class="col-md-3">
+        <p>CSS / CSS3</p>
+      </div>
+      <div class="col-md-9">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:92%">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-left skillbar">
+      <div class="col-md-3">
+        <p>JavaScript</p>
+      </div>
+      <div class="col-md-9">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:67%">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-left skillbar">
+      <div class="col-md-3">
+        <p>Java</p>
+      </div>
+      <div class="col-md-9">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:67%">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-left skillbar">
+      <div class="col-md-3">
+        <p>C / C++</p>
+      </div>
+      <div class="col-md-9">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:67%">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    
+    <div class="row text-left">
+        <p>PHP</p>
+        <div class="skillbar"></div>
+    </div>
+    <div class="row text-left">
+        <p>MySQL</p>
+        <div class="skillbar"></div>
     </div>
     
-    <div id="skills">
-    	<h2>Here are my Skills...
-        </h2>
-        <div>
-        	<p>Beginner</p><p>Intermediate</p><p>Expert</p>
-        </div>
-        <div class="skill_container">
-        	<p>HTML / HTML5</p>
-            <div class="skillbar"></div>
-        </div>
-        <div class="skill_container">
-        	<p>CSS / CSS3</p>
-            <div class="skillbar"></div>
-        </div>
-        <div class="skill_container">
-        	<p>PHP</p>
-            <div class="skillbar"></div>
-        </div>
-        <div class="skill_container">
-        	<p>MySQL</p>
-            <div class="skillbar"></div>
-        </div>
-        <div class="skill_container">
-        	<p>JavaScript</p>
-            <div class="skillbar"></div>
-        </div>
-        <div class="skill_container">
-        	<p>JQuery</p>
-            <div class="skillbar"></div>
-        </div>
+    <div class="row text-left">
+        <p>JQuery</p>
+        <div class="skillbar"></div>
     </div>
-    
-    <div id="work">
-    </div>
-    
-    <div id="education">
-    	<h2>My educational details are as:</h2>
-    	<p>Bachelor of Technology (B.Tech) in Computer Science Engineering from Government College of Engineering and Ceramic Technology, Kolkata, India.
-        2011-2015
-        </p>
-        <p>High School from Bholananda National Vidyalaya, Kolkata, India. 2008-2010.
-        </p>
-        <p>School from Modern English Academy. Passed out in 2008.
-        </p>
-    </div>
-    
-    <div id="contactme">
-    	<h2>Like what you see? Contact me!</h2>
-        <p>email : ishtiaque.zafar92@gmail.com</p>
-        <p>mobile : +91 9740322391 / +91 8981505142</p>
-    </div>
+    -->
+  </div>
 </body>
+  
 </html>
