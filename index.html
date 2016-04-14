@@ -26,9 +26,19 @@
       background-color: #ffffff; /* White */
       color: #555555;
   }
+  .bg-4 { 
+	  background-color: #262216;
+	  color: #BCD531;
+  }.bg-7 { 
+	  background-color: #2f2f2f;
+	  color: #ffffff;
+  }
   .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
+  }
+  .container-fluid:last-child {
+	padding-bottom: 20px;
   }
   .skillbar {
 	width: 75%;
@@ -48,7 +58,7 @@
 <body>
   <div class="container-fluid bg-1 text-center">
     <h1>Hi!</h1>
-    <img src="images/my_pic.jpg" class="img-circle" alt="my picture">
+    <img src="images/my_pic.jpg" class="img-circle img-responsive" style="display:inline" alt="my picture">
     <h2>I am a doer, go-getter and dreamer.</h2>
   </div>
   
@@ -60,6 +70,7 @@
   
   <div class="container-fluid bg-3 text-center">
     <h2>Things I know</h2>
+    <!--
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-1"><span>Beginner</span></div>
@@ -68,6 +79,7 @@
       <div class="col-md-1"><span>Expert</span></div>
       <div class="col-md-1"><span>Master</span></div>
     </div>
+    -->
     <div class="row text-left skillbar">
       <div class="col-md-3">
         <p>HTML / HTML5</p>
@@ -166,6 +178,17 @@
     </div>
     
   </div>
+  
+  <div class="container-fluid bg-4 text-center">
+  	<h2>My Educational Background</h2>
+  </div>
+
+  <footer class="container-fluid bg-7 text-center">
+    <h4>Like what you see? Contact me!</h4>
+    <p>email : ishtiaque.zafar92@gmail.com</p>
+    <p>mobile : +91 9740322391 / +91 8981505142</p>
+    <p>Made By Ishtiaque. All information present here are true to my belief.</p> 
+  </footer>
 </body>
   
 </html>
