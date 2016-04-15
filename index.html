@@ -59,23 +59,65 @@
 	display: inline-block;
 	margin-right: 1em;	  
   }
+  
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+
+  .navbar-nav li a:hover {
+	color: #1abc9c !important;
+  }
+  h1, h2 {
+	margin-bottom: 3em;  
+  }
+  h1:first-child {
+	margin-top: 3em;
+  }
   </style>
 </head>
 
 <body>
-  <div class="container-fluid bg-1 text-center">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+        </button>
+        <a class="navbar-brand" href="#who">Me</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#who">WHO</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#work">WORK EXP.</a></li>
+          <li><a href="#edu">EDUCATION</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid bg-1 text-center" id="who">
     <h1>Hi!</h1>
     <img src="images/my_pic.jpg" class="img-circle img-responsive" style="display:inline" alt="my picture">
     <h2>I am a doer, go-getter and dreamer.</h2>
+    <p>Scroll down to know more.</p>
   </div>
   
   <div class="container-fluid bg-2 text-center">
     <h2>About me</h2>
     <p>I'm Ishtiaque. Computer Science graduate from Kolkata, India. Software developer by profession, Geek by heart. I love coding and making new things. After freelancing as a web developer during my college days, I am currently working for a reputed MNC in India. </p>
-    <p>Scroll down to know more.</p>
   </div>
   
-  <div class="container-fluid bg-3 text-center">
+  <div class="container-fluid bg-3 text-center" id="skills">
     <h2>Things I know</h2>
     <!--
     <div class="row">
@@ -185,7 +227,7 @@
     </div> 
   </div>
   
-  <div class="container-fluid bg-5 text-center">
+  <div class="container-fluid bg-5 text-center" id="work">
   	<h2>Work Experience</h2>
     <div class="container">
       <ul class="timeline">
@@ -236,7 +278,7 @@
     </div>
   </div>
   
-  <div class="container-fluid bg-4 text-center">
+  <div class="container-fluid bg-4 text-center" id="edu">
   	<h2>My Educational Background</h2>
     <div class="container">
       <ul class="timeline">
@@ -287,7 +329,7 @@
     </div>
   </div>
 
-  <footer class="container-fluid bg-7 text-center">
+  <footer class="container-fluid bg-7 text-center" id="contact">
     <h4>Like what you see? Contact me!</h4>
     <p>email : ishtiaque.zafar92@gmail.com</p>
     <p>mobile : +91 9740322391 / +91 8981505142</p>
