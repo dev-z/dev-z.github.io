@@ -1,7 +1,7 @@
 # myCV
 Online CV
 
-An online document telling others about my career, educational background and the things I have made.
+Hey there! Know a little more about me, my career, educational background and the things I have made.
 
 To view the webpage, please click here:
-http://rawgit.com/dev-z/myCV/master/index.html
+https://dev-z.github.io/myCV/
