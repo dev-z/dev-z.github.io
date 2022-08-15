@@ -1,564 +1,138 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ishtiaque's CV</title>
-  <!-- CSS for the timeline -->
-  <link rel="stylesheet" href="css/timeline.css">   
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
-  
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
-  <!-- My custom styles -->
-  <link href="css/work_gallery.css" rel="stylesheet">
-  <style>
-    .bg-1 {
-      background-image: url(images/bg_one.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: #1abc9c; /* Green */
-      color: #ffffff;
-    }
-    .bg-2 {
-        background-color: #474e5d; /* Dark Blue */
-        color: #ffffff;
-    }
-    .bg-3 {
-      background: #F4F4F4 url(images/noisebg.png);
-      /*
-        background-color: #ffffff;
-        color: #555555;
-      */
-    }
-    .bg-4 {
-      background-color: #262216;
-      color: #BCD531;
-    }
-    .bg-5 {
-      background-color: #49412c;
-      color: #BCD531;
-    }
-    .bg-7 {
-      background-color: #2f2f2f;
-      color: #ffffff;
-    }
-    .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
-    }
-    .container-fluid:last-child {
-    padding-bottom: 20px;
-    }
-    .skillbar {
-    width: 75%;
-    margin: auto;
-    }
-    @media only screen and (max-width: 1000px){
-      .skillbar-header{
-        display: none;
-      }
-    }
-    .skilltags {}
-    .skilltags p {
-    background-color: F5F5F5;
-    padding : 5px 10px;
-    box-shadow: 2px 2px 2px #AAAAAA;
-    display: inline-block;
-    margin-right: 1em;
-    }
-  
-    .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
-    }
-
-    .navbar-nav li a:hover {
-    color: #1abc9c !important;
-    }
-    h1, h2 {
-      margin-bottom: 2.5em;
-    }
-    h1:first-child{
-      margin-top: 1em;
-      font-size: 4em;
-    }
-    .font-roboto{
-      font-family: 'Roboto', sans-serif;
-    }
-
-    .alignleft {
-      float: left;
-    }
-    .alignright {
-      float: right;
-    }
-
-  </style>
-</head>
-
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span> 
-        </button>
-        <a class="navbar-brand" href="#me">Me</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#who">WHO</a></li>
-          <li><a href="#skills">SKILLS</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#work">WORK EXP.</a></li>
-          <li><a href="#edu">EDUCATION</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-	
-  <div class="container-fluid bg-1 text-center" id="me">
-    <h1 class="font-roboto">Hi!</h1>
-    <img src="images/my_pic.png" class="img-circle img-responsive" style="display:inline" alt="my picture">
-    <h2 class="font-roboto">I am a doer, go-getter.</h2>
-    <p>Scroll down to know more.</p>
-  </div>
-  
-  <div class="container-fluid bg-2 text-center" id="who">
-    <h2>About me</h2>
-    <p class="text-justify">I'm Ishtiaque. Computer Science graduate from Kolkata, India.  Web Developer by profession,
-	Geek by heart. Love coding and making new things. DIY Fan. Often found coding,
-	even on weekends. Currently awestruck by AngularJS and ReactJS.
-  AI is also a field I am diving into. 
-      When I am not coding, you can find me playing on my PS4 or tinkering with the Raspberry Pi.
-    </p>
-  </div>
-  
-  <div class="container-fluid bg-3 text-center" id="skills">
-    <h2>Things I know</h2>
-
-    <div class="row skillbar skillbar-header">
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-        <div class="col-md-3"><span>Beginner</span></div>
-        <div class="col-md-3"><span>Familiar</span></div>
-        <div class="col-md-3"><span>Proficient</span></div>
-        <div class="col-md-3"><span>Expert</span></div>
-      </div>
-    </div>
-    <br>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p>HTML / HTML5</p>
-      </div>
-      <div class="col-md-9">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p>CSS / LESS</p>
-      </div>
-      <div class="col-md-9">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p>JavaScript</p>
-      </div>
-      <div class="col-md-9">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:75%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p>Angular JS</p>
-      </div>
-      <div class="col-md-9">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p>JQuery</p>
-      </div>
-      <div class="col-md-9">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p>NodeJS</p>
-      </div>
-      <div class="col-md-9">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p>Java</p>
-      </div>
-      <div class="col-md-9">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:67%">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-left skillbar">
-      <div class="col-md-3">
-        <p><strong>I also know : </strong></p>
-      </div>
-      <div class="col-md-9 skilltags">
-        <p>Bootstrap</p>
-        <p>Android</p>
-        <p>Python</p>
-        <p>C / C++</p>
-        <p>SQL</p>
-      </div>
-    </div> 
-  </div>
-
-  <div class="container-fluid bg-3 text-center" id="projects">
-    <h2>Things I made</h2>
-    <div id="work">
-
-      <div class="work-gallery">
-        <div class="img">
-          <a href="https://neoscript.in" target="_blank" rel="noopener">
-            <img src="images/nslogo.png" alt="Github" width="300" height="200">
-          </a>
-          <div class="desc">
-            <div class="desc-heading">
-              <p class="alignleft"><strong>NeoScript Landing Page</strong></p>
-              <p class="alignright">
-                <a href="https://neoscript.in"
-                   target="_blank" rel="noopener"
-                   type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-link"></span> Link
-                </a>
-              </p>
-              <div style="clear: both;"></div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Ishtiaque's World</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#page-top">Ishtiaque</a></li>
+                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
+                <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                <li class="sidebar-nav-item"><a href="#blog">Blog</a></li>
+                <li class="sidebar-nav-item"><a href="#work">Work Exp.</a></li>
+                <li class="sidebar-nav-item"><a href="#connect">Connect</a></li>
+            </ul>
+        </nav>
+        <!-- Header-->
+        <header class="masthead d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-start">
+                <h4 class="mb-5 text-uppercase">Ishtiaque Zafar</h4>
+                <h1 class="mb-5">{ converting ideas into products }</h1>
+                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
             </div>
-            <div class="desc-text">
-              <p>NeoScript is the company I currently work at. Re-designed the company's product landing page to give it 
-                a more professional look.
-              </p>
+        </header>
+        <!-- About-->
+        <section class="content-section bg-dark" id="about">
+            <div class="container px-4 px-lg-5 text-start text-light">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col">
+                        <h6 class="mb-5 text-uppercase">About Me</h6>
+                        <h1 class="mb-1">Software Engineer</h1>
+                        <h1 class="mb-1">Blogger</h1>
+                        <h1 class="mb-5">Dreamer, doer, go-getter</h1>
+                        <p class="text-justify">I enable businesses. I transform ideas into products using my coding superpowers. I am capable of building highly scalable solutions powered by the cloud! I am pro-serverless and pro-automation. If there's something that can be automated, I'll do it! I have worked at several startups from early stage phases and lead them to new heights. I am not your average "developer", I am extremely passionate about my work and love what I do. I also try be a part of the local developer community. I conduct training sessions, attend meetups and conferences and have spoken at a few myself.</p>
+                    </div>
+                    <div class="col">
+                        <div class="image-holder"><div class="about-image"></div></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-gallery">
-        <div class="img">
-          <a href="#">
-            <img src="images/ninjaeditor.png" alt="Ninja Editor" width="300" height="200">
-          </a>
-          <div class="desc">
-            <div class="desc-heading">
-              <p class="alignleft"><strong>NinjaEditor</strong></p>
-              <!--
-              <p class="alignright">
-                <a href="#" type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-link"></span> Link
-                </a>
-              </p>
-              -->
-              <div style="clear: both;"></div>
+        </section>
+        <!-- Blog-->
+        <section class="content-section" id="blog">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-12 col-md-6 order-last order-md-first">
+                        <a class="btn-outline-dark no-hover-effects" href="https://medium.com/@ishtiaque/no-code-isnt-scalable-our-learnings-at-finn-going-from-1000-toward-100-000-car-subscriptions-ac98e752fc61" target="_blank">
+                            <div class="container px-0 mb-5"><h4>No-code isn’t scalable. Our learnings at FINN going from 1000 toward 100,000 car subscriptions</h4></div>
+                        </a>
+                        <a class="btn-outline-dark no-hover-effects" href="https://medium.com/@ishtiaque/why-i-dont-like-api-frameworks-together-with-serverless-39200063b4e0" target="_blank">
+                            <div class="container px-0 mb-5"><h4>Why I don’t like API frameworks together with Serverless</h4></div>
+                        </a>
+                        <a class="btn-outline-dark no-hover-effects" href="https://medium.com/@ishtiaque/how-a-german-start-up-achieved-4-mn-arr-in-one-year-89fe123e0079" target="_blank">
+                            <div class="container px-0 mb-5"><h4>How A German Start-up Achieved 4 Mn € ARR In One Year</h4></div>
+                        </a>
+                        <a class="btn-outline-dark no-hover-effects" href="https://medium.com/@ishtiaque/why-i-chose-to-be-a-software-developer-bb6f2b4f1442" target="_blank">
+                            <div class="container px-0 mb-5"><h4>Why I chose to be a Software Developer</h4></div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 order-first order-md-last">
+                        <div class="container px-0 mb-5 text-end">
+                            <h6 class="mb-5 text-uppercase">Blog</h6>
+                            <h1 class="mb-5">My latest thoughts</h1>
+                            <p class="text-justify">
+                                I write sometimes, about my experiences, observations and thoughts in general. Read them on
+                                <a class="btn-link text-dark" href="https://medium.com/@ishtiaque" target="_blank">Medium</a>
+                                or
+                                <a class="btn-link text-dark" href="https://dev.to/ishtiaque" target="_blank">dev.to</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="desc-text">
-              <p>Online coding playground for HTML, CSS and JS. Type your code in the corresponding panes and see
-                output immediately. Built using AngularJS.</p>
+        </section>
+        <!-- Work-->
+        <section class="content-section bg-dark" id="work">
+            <div class="container px-4 px-lg-5 text-start text-light">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col">
+                        <h6 class="mb-5 text-uppercase">Work</h6>
+                        <h1 class="mb-5">I &hearts; Software Engineering</h1>
+                        <p class="text-justify">I am currently working at FINN GmbH, a car-subscription startup based out of Munich, Germany. I work there as a Senior Software Engineer II. I love working with TypeScript and AWS and my expertise lies in designing backend systems. I come from India. My professional life started out in 2015 and I have worked in various Indian startups before joining FINN in May 2020. Starting at FINN, my main task was to analyze the existing processes in subscription management and car delivery, and to automate them. Automated processes are one of the main USPs of FINN. As FINN grew, I moved on to a specific sub-team in Operations department: the Customer Product team, to focus on building better services for our customers and acheived a industry leading Net Promoter Score (NPS) of 75! My Team and I also built a multi-country (EU and US) backend system to help us scale from 10,000 to 100,000 car subscriptions.</p>
+                        <p class="text-justify">For a complete and detailed work history, please refer to my LinkedIn page.</p>
+                    </div>
+                    <div class="col">
+                        <div class="image-holder"><div class="work-image"></div></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-gallery">
-        <div class="img">
-          <a href="#">
-            <img src="images/feelsafe.png" alt="Feel Safe" width="300" height="200">
-          </a>
-          <div class="desc">
-            <div class="desc-heading">
-              <p class="alignleft"><strong>FeelSafe</strong></p>
-              <!--
-              <p class="alignright">
-                <a href="#" type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-link"></span> Link
-                </a>
-              </p>
-              -->
-              <div style="clear: both;"></div>
+        </section>
+        <!-- Call to Action-->
+        <section class="content-section" id="connect">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-5">Got a great idea? Let's talk!</h1>
+                <p>Message me on LinkedIn and I'll get back to you as soon as time allows me. I'm always open to collaborations and opportunities. We could even talk about tech or you can show me your cool weekend project.</p>
             </div>
-            <div class="desc-text">
-              <p>Personal Safety App. When in danger, send SMS alerts to your selected contacts about your GPS co-ordinates
-                and street address. User can also see nearby places, so that getting to help is easier.</p>
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/ishtiaquezafar/" target="_blank"><i class="icon-social-linkedin"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/ZafarIshtiaque" target="_blank"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="https://github.com/dev-z" target="_blank"><i class="icon-social-github"></i></a>
+                    </li>
+                </ul>
+                <p class="text-muted small mb-0">Made by Ishtiaque</p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-gallery">
-        <div class="img">
-          <a href="https://dev-z.github.io/FinanceManager/" target="_blank" rel="noopener">
-            <img src="images/financemanager.png" alt="Github" width="300" height="200">
-          </a>
-          <div class="desc">
-            <div class="desc-heading">
-              <p class="alignleft"><strong>FinanceManager</strong></p>
-              <p class="alignright">
-                <a href="https://dev-z.github.io/FinanceManager/"
-                   target="_blank" rel="noopener"
-                   type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-link"></span> Link
-                </a>
-              </p>
-              <div style="clear: both;"></div>
-            </div>
-            <div class="desc-text">
-              <p>Finance management web app. Keep record of your daily transactions.
-               <strong>Add tags</strong> like Bills, Savings, Food, etc. to transactions.
-               <strong>Filter transactions</strong> by Account, Tag, Month and more!
-               Edit / Remove Transactions at any point of time from the list itself.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-gallery">
-        <div class="img">
-          <a href="https://dev-z.github.io/ParseBuddy/" target="_blank" rel="noopener">
-            <img src="images/parsebuddy.png" alt="Parse Buddy" width="300" height="200">
-          </a>
-          <div class="desc">
-            <div class="desc-heading">
-              <p class="alignleft"><strong>ParseBuddy</strong></p>
-              <p class="alignright">
-                <a href="https://dev-z.github.io/ParseBuddy/"
-                   target="_blank" rel="noopener"
-                   type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-link"></span> Link
-                </a>
-              </p>
-              <div style="clear: both;"></div>
-            </div>
-            <div class="desc-text">
-              <p>A simple JS library for converting data from CSV format to JSON and JSON to CSV.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-gallery">
-        <div class="img">
-          <a href="https://github.com/dev-z/" target="_blank" rel="noopener">
-            <img src="images/Octocat.jpg" alt="Github" width="300" height="200">
-          </a>
-          <div class="desc">
-            <div class="desc-heading">
-              <p class="alignleft"><strong>View More</strong></p>
-              <p class="alignright">
-                <a href="https://github.com/dev-z/"
-                   target="_blank" rel="noopener"
-                   type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-link"></span> Link
-                </a>
-              </p>
-              <div style="clear: both;"></div>
-            </div>
-            <div class="desc-text">
-              <p>View more of my work on GitHub.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-  <div class="container-fluid bg-5 text-center" id="work">
-  	<h2>Work Experience</h2>
-    <div class="container">
-      <ul class="timeline">
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-certificate"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">Software Development Engineer - NeoScript</h3>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> October,2016 - Present</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Domain: Web development. MEAN stack.</p>
-              <br>
-              <ul class="text-left">
-                <li>
-                  Used Bootstrap, Angular-UI, Kendo UI and other similar front-end libraries to make the frontend responsive without compromising on user-experience.
-                </li>
-                <li>
-                  Assisted in development of back end features using NodeJS, ExpressJS, MySQL DB and PostgreSQL DB.
-                </li>
-                <li>
-                  Wrote RESTful APIs using NodeJS and ExpressJS.
-                </li>
-                <li>
-                  Wrote unit testing scripts using Mocha test framework for NodeJS and Chai Assertion Library.
-                </li>
-                <li>
-                  Build Automation using the Gulp Automation toolkit.
-                </li>
-                <li>
-                  Wrote directives in AngularJS in one of the projects, which helped reduce code-complexity and increase code modularity, to a large extent.
-                </li>
-              </ul>
-              <p></p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-certificate"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">Systems Engineer - Infosys</h3>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> July,2015 - September,2016 (1 year 2 months)</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Worked on various domains including Web Development and SAP ABAP.</p>
-              <p></p>
-              <p></p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-certificate"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">Intern - M2C Solutions Pvt. Ltd.</h3>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2015 (3 Months)</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Domain: Android App Development</p>
-              <p>
-                Responsible for UI/UX part of the android app being developed by this company.
-              </p>
-              <p></p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-certificate"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">Freelancer</h3>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>2014 - 2015 ( 1 year)</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Domain: Web development</p>
-              <p class to text-justify>Started working on small freelance projects during college to gain experience. Work includes mainly
-                 creating websites and webpages for small businesses. Worked mainly with HTML, CSS, JS and PHP.</p>
-              <p></p>
-            </div>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-  
-  <div class="container-fluid bg-4 text-center" id="edu">
-  	<h2>My Educational Background</h2>
-    <div class="container">
-      <ul class="timeline">
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-certificate"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">Graduation</h3>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2011 - 2015</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Bachelor of Technology (B.Tech) degree in Computer Science &amp; Engineering.</p>
-              <p>Govt. College of Engineering and Ceramic Technolgy, Kolkata, WB, India.</p>
-              <p>C.G.P.A. : 8.53 / 10.0</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-certificate"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">High School</h3>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2008 - 2010</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Central Board of Secondary Education, India.</p>
-              <p>Bholananda National Vidyalaya, Barrackpore, WB, India.</p>
-              <p>Passed out with 72 %.</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-certificate"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">School</h3>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Passed out in 2008.</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Indian Certificate of Secondary Education.</p>
-              <p>Modern English Academy, Barrackpore, WB, India.</p>
-              <p>Passed out with 84 %.</p>
-            </div>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  <footer class="container-fluid bg-7 text-center" id="contact">
-    <h4>Like what you see? Contact me!</h4>
-    <p>email : ishtiaque.zafar92 [at] gmail.com</p>
-    <p>mobile : +91 9740322391</p>
-    <a href="https://www.dropbox.com/s/pflkmbn2phvt7wq/IshtiaqueZafarCV.pdf?dl=0" target="_blank" rel="noopener">Download PDF Version</a>
-    <p>Made By Ishtiaque. Information present here is true to my belief.</p> 
-  </footer>
-
-</body>
-  
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
