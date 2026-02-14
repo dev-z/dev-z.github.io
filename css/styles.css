@@ -11489,30 +11489,21 @@ footer.footer .social-link:hover {
   justify-content: center;
   height: 100%;
 }
-.image-holder .about-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("../assets/img/profile-pic.png");
-}
-
 .image-holder {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
-.image-holder .work-image {
+
+.image-holder img.about-image,
+.image-holder img.work-image {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("../assets/img/work-pic.png");
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .service-icon {
