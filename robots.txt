@@ -1,0 +1,14 @@
+# Robots.txt for ishtiaquezafar.com
+User-agent: *
+Allow: /
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://www.ishtiaquezafar.com/sitemap.xml
+
+# Allow common search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
