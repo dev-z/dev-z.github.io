@@ -11525,3 +11525,19 @@ footer.footer .social-link:hover {
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
+
+/* Maintain H1-like appearance for section H2 headings */
+section h2.mb-1,
+section h2.mb-5 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Responsive sizing for mobile */
+@media (max-width: 768px) {
+  section h2.mb-1,
+  section h2.mb-5 {
+    font-size: 2rem;
+  }
+}
