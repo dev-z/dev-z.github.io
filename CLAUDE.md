@@ -2,7 +2,7 @@
 
 ## What This Project Is
 
-Personal portfolio website hosted on GitHub Pages at ishtiaquezafar.com. Single-page application showcasing professional experience, blog posts, and contact information.
+Personal portfolio website hosted on GitHub Pages at ishtiaquezafar.com. Single-page site showcasing professional experience, blog posts, and contact information.
 
 **Repository**: dev-z.github.io
 **Live Site**: https://ishtiaquezafar.com (via CNAME:1)
@@ -10,47 +10,40 @@ Personal portfolio website hosted on GitHub Pages at ishtiaquezafar.com. Single-
 
 ## Tech Stack
 
-- **Frontend**: Pure HTML, CSS, JavaScript (no build process)
-- **UI Framework**: Bootstrap 5.1.3 (via CDN at index.html:144)
-- **Icons**: Font Awesome 6.1.0 (index.html:12), Simple Line Icons 2.5.5 (index.html:14)
-- **Fonts**: Google Fonts - Source Sans Pro (index.html:16)
-- **Template**: Start Bootstrap - Stylish Portfolio v6.0.5 (js/scripts.js:2)
+- **Frontend**: Pure HTML, CSS, JavaScript — fully hand-crafted, no frameworks, no build process
+- **Fonts**: Google Fonts — Space Grotesk (display/body) + JetBrains Mono (accents), the only external dependency
+- **Icons**: Inline SVG (no icon fonts or CDNs)
+- **Design**: Custom dark theme with amber accent, defined via CSS custom properties in css/styles.css `:root`
 
 ## Project Structure
 
 ```
 /
-├── index.html              # Main single-page application
+├── index.html              # Main single-page site with all content
 ├── css/
-│   └── styles.css          # Bootstrap-based custom styles (11,526 lines)
+│   └── styles.css          # Hand-written design system (~800 lines)
 ├── js/
-│   └── scripts.js          # Sidebar toggle, scroll effects (80 lines)
+│   └── scripts.js          # Vanilla JS: nav, scroll reveal, typewriter, particle canvas
 ├── assets/
 │   ├── favicon.ico         # Site favicon
 │   └── img/
 │       ├── profile-pic.png # About section image
-│       └── work-pic.png    # Work section image
+│       └── work-pic.png    # (currently unused) conference photo
 ├── CNAME                   # Custom domain configuration
 └── README.md               # Project overview
 ```
-
-## Key Directories
-
-- **`/` (root)**: Contains index.html - the single-page application with all content
-- **`css/`**: Contains Bootstrap-based styles (mostly generated/template code)
-- **`js/`**: Contains vanilla JavaScript for UI interactions (sidebar, scroll-to-top)
-- **`assets/`**: Static assets (images, favicon)
 
 ## Content Sections
 
 The website (index.html) is organized into these sections:
 
-1. **Header/Hero** (index.html:34-40): Landing section with tagline
-2. **About** (index.html:42-57): Professional introduction and profile
-3. **Blog** (index.html:59-96): Links to Medium and dev.to articles
-4. **Work** (index.html:98-116): Work experience at FINN GmbH
-5. **Connect** (index.html:118-123): Call-to-action for collaboration
-6. **Footer** (index.html:125-140): Social links (LinkedIn, Twitter, GitHub)
+1. **Nav**: Fixed top bar with numbered anchor links (01–04)
+2. **Hero**: Particle-canvas background, terminal prompt, typewriter headline rotator
+3. **About** (`#about`): Bio, skill chips, profile photo
+4. **Writing** (`#blog`): Card grid of external blog posts, newest first with "new" badge
+5. **Work** (`#work`): Timeline of roles (Skyflow, FINN, earlier) with stat cards
+6. **Connect** (`#connect`): LinkedIn call-to-action
+7. **Footer**: Inline-SVG social links (LinkedIn, Twitter/X, GitHub, Medium)
 
 ## Development Workflow
 
@@ -74,41 +67,37 @@ Deployment is automatic via GitHub Pages:
 2. GitHub Pages automatically serves the updated site
 3. Changes appear at ishtiaquezafar.com within minutes
 
-**Important**: The `master` branch is the main/production branch (git status shows this).
+**Important**: The `master` branch is the main/production branch.
 
 ## Making Changes
 
 ### Content Updates
 
-All content is in `index.html`. Key areas to update:
+All content is in `index.html`:
 
-- **About section**: index.html:42-57
-- **Blog links**: index.html:59-96 (add new `<a>` tags following existing pattern)
-- **Work experience**: index.html:98-116
-- **Social links**: index.html:127-136
+- **Adding a blog post**: Copy an existing `.post-card` anchor in the `#blog` section, place it first, and move the `<span class="post-badge">new</span>` to it
+- **Work experience**: Add/edit `.timeline-entry` articles in `#work`; stats go in `.stat-row`
+- **Social links**: Footer `.social-links` — inline SVG with `fill="currentColor"` and `aria-label`
 
 ### Styling
 
-Custom styles are in `css/styles.css`. This is a large Bootstrap-based file - use browser DevTools to identify specific selectors before editing.
+All design tokens (colors, fonts, spacing) are CSS custom properties in the `:root` block at the top of css/styles.css. Change tokens there rather than hardcoding values in rules.
 
 ### JavaScript
 
-UI interactions are in `js/scripts.js`:
-- Sidebar menu toggle (js/scripts.js:11-17)
-- Scroll-to-top button (js/scripts.js:43-56)
+js/scripts.js is one IIFE with clearly-commented feature blocks: nav state, scroll reveal (IntersectionObserver), hero typewriter, hero particle canvas. All animations respect `prefers-reduced-motion`.
 
 ## Additional Documentation
 
 For specialized topics, see:
 
-- `.claude/docs/architectural_patterns.md` - UI patterns and conventions used in the template
+- `.claude/docs/architectural_patterns.md` - design system, HTML/CSS/JS patterns and conventions
 
 ## Notes for Claude
 
-- This is a **static site** with no build process - changes to HTML/CSS/JS are immediately deployable
-- The site uses **external CDN resources** (Bootstrap, Font Awesome) - no local dependencies to manage
+- This is a **static site** with no build process — changes to HTML/CSS/JS are immediately deployable
+- **Everything is first-party code** — no template or framework code to preserve; edit freely
+- The only external dependency is **Google Fonts**
 - **No testing framework** is in place (manual browser testing only)
-- **No package.json** or build tools - pure vanilla web development
-- Template is from **Start Bootstrap** - large portions of CSS/JS are third-party code
-- When updating content, maintain the existing **semantic HTML structure** and **Bootstrap grid classes**
-- **CNAME file** must remain unchanged - it configures the custom domain
+- When updating content, maintain the existing **semantic HTML structure**, **`.reveal` scroll-animation classes**, and **numbered section indices** (nav and headings must stay in sync)
+- **CNAME file** must remain unchanged — it configures the custom domain

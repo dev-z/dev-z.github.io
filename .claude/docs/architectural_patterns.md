@@ -2,224 +2,116 @@
 
 This document describes the patterns, conventions, and design decisions used in the portfolio website.
 
-## Template-Based Architecture
+## Hand-Crafted, Zero-Framework Architecture
 
-This project is built on **Start Bootstrap's Stylish Portfolio template** (v6.0.5). The template provides:
+The site is fully custom — no CSS framework, no JS libraries, no build process. The only external dependency is Google Fonts (Space Grotesk + JetBrains Mono). Everything else is hand-written:
 
-- Single-page scrolling layout with anchor-based navigation
-- Sidebar toggle menu
-- Scroll-to-top functionality
-- Responsive design with Bootstrap grid system
+- `index.html` — all content and structure
+- `css/styles.css` — custom design system (~800 lines)
+- `js/scripts.js` — vanilla JS interactions (~200 lines)
 
-**Pattern**: Template code (especially CSS) should generally not be modified. Custom changes should be additive when possible.
+**Pattern**: All code in this repo is first-party. There is no "template code" that must be preserved — edit anything freely.
+
+## Design System (CSS)
+
+### Custom Properties
+
+All design tokens live in `:root` at the top of css/styles.css:
+
+- **Colors**: `--bg` (near-black), `--bg-alt`, `--surface`, `--border`, `--text`/`--text-dim`/`--text-faint`, and a single warm amber accent (`--accent: #f5a524`) with soft/glow variants
+- **Type**: `--font-body` (Space Grotesk) and `--font-mono` (JetBrains Mono)
+- **Layout**: `--container` (1100px), `--radius`, `--nav-height`
+
+**Convention**: Never hardcode colors in rules — always use the custom properties. The accent color is used sparingly: indices, links, hover borders, stats, the primary button.
+
+### Visual Language
+
+- Dark theme throughout; alternating sections use `.section-alt` for subtle contrast
+- Monospace (`.mono`) marks "engineer" accents: nav links, section indices (`01.`), terminal prompt, stats, badges, footer
+- Section headings use numbered indices plus a horizontal rule via `.section-heading::after`
+- Cards (`.post-card`, `.stat`) share the same surface/border/hover-lift treatment
+
+### Responsive Breakpoints
+
+Two breakpoints: `860px` (about grid stacks) and `720px` (mobile nav, tighter timeline). Fluid type via `clamp()` handles everything in between.
+
+### Accessibility
+
+- `prefers-reduced-motion` is respected: kills animations, reveals all content, hides the canvas
+- All interactive elements are real `<a>`/`<button>` tags; menu toggle has `aria-expanded`/`aria-controls`
+- Decorative elements (canvas, arrows, markers) carry `aria-hidden="true"`
 
 ## HTML Structure Patterns
 
 ### Section Organization
 
-Each major section follows this pattern (see index.html:42-57, 59-96, 98-116):
+Each major section follows this pattern:
 
 ```html
-<section class="content-section [bg-dark]" id="section-name">
-    <div class="container px-4 px-lg-5 [text-start] [text-light]">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col">
-                <h6 class="mb-5 text-uppercase">Section Label</h6>
-                <h1 class="mb-5">Section Heading</h1>
-                <p class="text-justify">Content...</p>
-            </div>
-            [optional second column for images]
-        </div>
+<section class="section [section-alt]" id="section-name">
+    <div class="container">
+        <h2 class="section-heading reveal"><span class="section-index mono">0N.</span>Title</h2>
+        <p class="section-sub reveal">Optional intro line</p>
+        <!-- section content, elements tagged .reveal for scroll animation -->
     </div>
 </section>
 ```
 
 **Convention**:
-- Alternating sections use `bg-dark` with `text-light` for visual contrast
-- Section IDs match the navigation anchors (index.html:24-31)
-- Consistent padding classes: `px-4 px-lg-5` for containers
-- Consistent margin classes: `mb-5` for spacing
+- Section IDs (`about`, `blog`, `work`, `connect`) match nav anchors — navigation is pure `#anchor` links
+- Numbered indices in nav and headings must stay in sync (01–04)
+- Add `.reveal` to elements that should fade in on scroll
 
-### Navigation Pattern
+### Blog Post Cards
 
-**Sidebar Navigation** (index.html:23-31):
-- Toggle button with hamburger icon (index.html:22)
-- Sidebar appears from left side when toggled
-- JavaScript handles open/close state (js/scripts.js:11-17)
-- Menu items link to section IDs using anchor tags
+Posts live in `#blog` inside `.post-grid`, newest first:
 
-**Pattern**: Navigation is entirely client-side using `#anchor` links. No routing library needed.
-
-## CSS Patterns
-
-### Bootstrap Integration
-
-**File**: css/styles.css (11,526 lines - mostly Bootstrap framework code)
-
-**Convention**:
-- Bootstrap 5.1.3 classes are used throughout
-- Grid system: `container`, `row`, `col` (responsive columns)
-- Spacing utilities: `mb-5`, `px-4`, `gx-4` (Bootstrap spacing scale)
-- Text utilities: `text-uppercase`, `text-justify`, `text-start`, `text-light`
-
-**Pattern**: Prefer Bootstrap utility classes over custom CSS when possible.
-
-### Custom Image Handling
-
-**Pattern** (index.html:53, 112):
 ```html
-<div class="image-holder"><div class="about-image"></div></div>
-<div class="image-holder"><div class="work-image"></div></div>
-```
-
-Images are set via CSS background-image (in styles.css) rather than `<img>` tags. This provides more styling control.
-
-## JavaScript Patterns
-
-### Event-Driven UI
-
-**File**: js/scripts.js
-
-**Pattern**: All JavaScript runs after DOM loads (js/scripts.js:6):
-```javascript
-window.addEventListener('DOMContentLoaded', event => {
-    // All UI logic here
-});
-```
-
-**Convention**:
-- Event listeners are attached to elements via `querySelector`
-- Helper functions prefixed with `_` are private (e.g., `_toggleMenuIcon` at js/scripts.js:29)
-- State is tracked with simple boolean flags (e.g., `scrollToTopVisible` at js/scripts.js:9)
-
-### No Framework Pattern
-
-**Decision**: This project deliberately uses **vanilla JavaScript** without frameworks (React, Vue, etc.).
-
-**Rationale**:
-- Simple, single-page site doesn't warrant framework overhead
-- Direct DOM manipulation is sufficient for limited interactivity
-- No build process required - easier deployment
-
-## Content Management Patterns
-
-### External Content Links
-
-**Blog posts** (index.html:63-80) link to external platforms:
-- Medium: https://medium.com/@ishtiaque
-- dev.to: https://dev.to/ishtiaque
-
-**Pattern**: Content is maintained on external platforms. The portfolio site only links to them, not hosting content directly.
-
-**Convention**: Blog link elements follow this structure:
-```html
-<a class="btn-outline-dark no-hover-effects" href="[url]" target="_blank">
-    <div class="container px-0 mb-5"><h4>[title]</h4></div>
+<a class="post-card reveal" href="[url]" target="_blank" rel="noopener">
+    <span class="post-meta mono"><span class="post-badge">new</span>medium</span>
+    <h3>[title]</h3>
+    <span class="post-arrow mono" aria-hidden="true">read &rarr;</span>
 </a>
 ```
 
-### Social Links
+**Convention**: Move the `<span class="post-badge">new</span>` to the newest post when adding one. Content itself is hosted on Medium/dev.to — this site only links out.
 
-**Footer social links** (index.html:127-136) use:
-- Simple Line Icons for social media icons
-- `list-inline` for horizontal layout
-- Circular styling via `social-link rounded-circle` classes
+### Work Timeline
 
-**Convention**: All external links use `target="_blank"` to open in new tabs.
+Each role is a `.timeline-entry` with a marker, header (title + `@ company` + mono period), paragraphs, and an optional `.stat-row` of key metrics (`<dl>` of `.stat` blocks). Newest role first.
 
-## Responsive Design Patterns
+## JavaScript Patterns
 
-### Mobile-First Approach
+All JS is in one IIFE in js/scripts.js, organized by feature:
 
-**Bootstrap breakpoints** used throughout:
-- `col-12 col-md-6`: Full width on mobile, half width on medium+ screens (index.html:62, 82)
-- `px-4 px-lg-5`: Smaller padding on mobile, larger on desktop
-- `gx-4 gx-lg-5`: Responsive gutter spacing
+1. **Nav** — `.scrolled` class on scroll; mobile menu toggle
+2. **Footer year** — auto-updated
+3. **Scroll reveal** — IntersectionObserver adds `.visible` to `.reveal` elements (one-shot, then unobserved)
+4. **Hero typewriter** — rotates words from the `data-words` JSON attribute on `#rotator`
+5. **Hero canvas** — particle constellation; particles glow amber near the cursor; paused via IntersectionObserver when the hero is off-screen; DPR-aware
 
-**Pattern**: Order classes control visual order on different screen sizes:
-```html
-<div class="col-12 col-md-6 order-last order-md-first">
-    <!-- Shows last on mobile, first on desktop -->
-</div>
-```
+**Convention**: `reducedMotion` is checked once at the top; every animated feature must bail out (or degrade gracefully) when it's true.
 
-### Sidebar Menu (Mobile Navigation)
+## Icons
 
-**Pattern**: On mobile, navigation is hidden in a sidebar that slides in when toggled. On desktop, it remains a slide-in menu (not a top navbar).
-
-**Implementation**:
-- CSS classes toggle `active` state (js/scripts.js:14-16)
-- Hamburger icon changes to X when open (js/scripts.js:29-40)
-
-## Asset Organization
-
-### Image Assets
-
-**Location**: assets/img/
-
-**Convention**:
-- Descriptive naming: `profile-pic.png`, `work-pic.png` (not generic like `image1.png`)
-- Organized in `img/` subdirectory, not loose in `assets/`
-
-### Icon Assets
-
-**Pattern**: Icons are loaded from CDNs (Font Awesome, Simple Line Icons), not local files.
-
-**Usage**:
-- Font Awesome: `<i class="fas fa-bars"></i>` (index.html:22)
-- Simple Line Icons: `<i class="icon-social-linkedin"></i>` (index.html:129)
+Social icons are **inline SVGs** in index.html (no icon font, no CDN). To add one, copy an official brand SVG path into the existing `.social-links` anchor pattern with `fill="currentColor"` and `aria-label`.
 
 ## Deployment Patterns
 
 ### GitHub Pages Configuration
 
-**CNAME file**: Required for custom domain (ishtiaquezafar.com)
+**CNAME file**: Required for custom domain (ishtiaquezafar.com) — never modify.
 
-**Pattern**:
 - `master` branch is the production branch
 - Direct commits to master trigger automatic deployment
-- No build/CI process - files are served as-is
-
-**Convention**: The CNAME file contains only the domain (no protocol, no path).
-
-## Accessibility Patterns
-
-### Semantic HTML
-
-**Pattern**: Proper HTML5 semantic elements are used:
-- `<header>` for masthead (index.html:34)
-- `<section>` for content sections
-- `<nav>` for sidebar navigation (index.html:23)
-- `<footer>` for footer (index.html:125)
-
-**Convention**: Section headings follow hierarchy (`<h1>`, `<h4>`, `<h6>`) for screen readers.
-
-### Link Accessibility
-
-**Pattern**: All interactive elements are proper `<a>` tags (not `<div onclick>`), ensuring keyboard navigation works.
-
-## Maintenance Patterns
-
-### Adding New Blog Posts
-
-To add a new blog post link (index.html:63-80):
-
-1. Add new `<a>` tag following the existing pattern
-2. Place it at the top of the list (newest first)
-3. Ensure consistent class names: `btn-outline-dark no-hover-effects`
-4. Include `target="_blank"` for external links
-
-### Updating Work Experience
-
-Work content is in a single section (index.html:98-116). Update the paragraph text directly.
-
-**Pattern**: Long-form content stays in paragraph tags, not broken into multiple sections (keeps it simple).
+- No build/CI process — files are served as-is
 
 ## Non-Patterns (Deliberately Not Used)
 
-- **No CSS preprocessor** (Sass, Less) - pure CSS
-- **No JavaScript build process** (webpack, Rollup) - vanilla JS served directly
-- **No component system** - single HTML file with all content
-- **No state management library** - simple boolean flags suffice
-- **No testing framework** - manual browser testing only
-- **No package manager** (npm, yarn) - all dependencies via CDN
+- **No CSS framework** (Bootstrap was removed in the 2026 redesign) — custom CSS only
+- **No CSS preprocessor** (Sass, Less) — pure CSS with custom properties
+- **No JavaScript build process** (webpack, Rollup) — vanilla JS served directly
+- **No component system** — single HTML file with all content
+- **No icon fonts** — inline SVG
+- **No testing framework** — manual browser testing only
+- **No package manager** (npm, yarn) — only dependency is Google Fonts via CDN
